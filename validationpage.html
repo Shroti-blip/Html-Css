@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation Page</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+
+        }
+
+        .input-box{
+            margin-bottom:20px;
+        }
+        p{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" th:action="@{/process}" th:object="${docdata}">
+            <div class="input-box">
+                <label for="dname" >Name</label>
+                <input type="text" name="dname" id="dname" th:value="${docdata.dname}">
+                <p th:each="err : ${#fields.errors('dname')}" th:text="${err}" ></p>
+            </div>
+            <div class="input-box">
+                <label for="email" >Email</label>
+                <input type="email" name="email" id="email" th:value="${docdata.email}">
+                <p th:each="err : ${#fields.errors('email')}" th:text="${err}"></p>
+            </div>
+            <div class="input-box">
+                <label for="exp" >Experience</label>
+                <input type="number" name="exp" id="exp" th:value="${docdata.exp}">
+                <p th:each="err : ${#fields.errors('exp')}" th:text="${err}"></p>
+            </div>
+            <div class="input-box">
+                <label for="password" >Create Password</label>
+                <input type="password" name="password" id="password" th:value="${docdata.password}">
+                <p th:each="err : ${#fields.errors('password')}" th:text="${err}"></p>
+            </div>
+            <div class="input-box">
+                <label for="address" >Address</label>
+                <textarea name="address" id="address" th:value="${docdata.address}"></textarea>
+                <p th:each="err : ${#fields.errors('address')}" th:text="${err}"></p>
+            </div>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>

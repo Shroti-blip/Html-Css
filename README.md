@@ -37,7 +37,7 @@ Example:
 ```css
 p {
   color: blue;
-  font-size: 16px;
+  font-size: 20px;
 }
 ```
 

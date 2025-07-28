@@ -1,0 +1,263 @@
+/* body{
+    margin:0;
+    padding:0;
+} */
+
+.clearfix::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
+/* clearfix is use to remove collapse 
+   collapse happens when u use float in every element and it get difficult ot take margin and etc......
+   
+*/
+.wrapper{
+    width:100%;
+    height:140px;
+    background-color: #519194;
+}
+
+.navigation{
+    width:960px;
+    height:140px;
+    /* background-color: bisque; */
+    margin:0 auto;
+}
+.master{
+    width:960px;
+    height:1000px;
+    
+    margin:auto;
+
+}
+
+.cyan{
+    width:960px;
+    height:355px;
+    background-color:#fff;
+    margin-top:40px;
+    border: 5px , solid , #5fb3bd;
+}
+
+.cyan img{
+    float:left;
+
+}
+.cyan h1{
+    float:right;
+    margin-right:140px;
+    margin-top:100px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.box{
+    width:200px;
+    float:left;
+    margin-top:50px;
+    margin-bottom:40px;
+    margin-right:40px;
+    /* text-align:justify; */
+}
+
+.box img{
+    width:200px;
+    border:5px solid #5fb3bd;
+    margin-bottom:30px;
+}
+.box h3{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:19px;
+}
+.box p{
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:23px;
+}
+/* 3-box starts here */
+
+.left-box{
+
+width:450px;
+border:5px solid #5fb3bd;
+clear:both;
+padding:10px;
+float: left;
+}
+
+.featured{
+    width:200px;
+    height:50px;
+    color:#fff;
+    background-color: #1e233a;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding-bottom:8px;
+    margin-bottom:30px;
+    position:relative;
+    top:-53px;
+    /* clear:both; */
+
+}
+
+.featured h1{
+    padding-top:10px;
+}
+
+
+.left-box img{
+float: left;
+margin-bottom: 30px;
+}
+
+.left-box h2{
+float:left;
+margin-top:0;
+margin-left:40px;
+}
+
+.left-box p{
+    clear:both;
+    font-size:17px;
+    line-height: 25px;
+}
+
+/* right top start here */
+
+.right-top{
+    width:430px;
+    background-color: #519194;
+    border:5px solid #5fb3bd;
+    padding-left:10px;
+    height:360px;
+    float:right;
+    color:#fff;
+    /* font-size: 24px; */
+    /* line */
+    /* float:right; */
+}
+.right-top .featured{
+padding-bottom:6px;
+font-size: 16px;
+}
+
+.right-top p{
+    font-size: 19px;
+    line-height: 25px;
+
+}
+
+
+/* Right bottom */
+
+.right-bottom{
+    width:430px;
+    background-color: #519194;
+    border:5px solid #5fb3bd;
+    /* padding-left:10px; */
+    padding-right:10px;
+    margin-top:30px;
+    height:300px;
+    float:left;
+    color:#fff;
+    margin-left:30px;
+
+}
+
+.right-bottom img{
+    position:relative;
+    top:-10px;
+    float:left;
+}
+
+.right-bottom p{
+    font-size: 20px;
+    line-height: 25px;
+    /* text-align:justify; */
+   
+}
+
+
+.logo {
+    width:240px;
+    height:90px;
+    background-color:#1e233a;
+    color:#fff;
+    float:left;
+    font-size:24px;
+    position:relative;
+   bottom:-70px;
+
+
+}
+
+.logo h1{
+    margin-top:17px;
+    margin-left:15px;
+}
+
+ul{
+    float:right;
+    margin:0;
+    padding:0;
+   list-style-type: none;
+
+}
+
+li{
+    float:left;
+    margin-top:80px;
+    margin-right:30px;
+}
+
+a{
+    color:#fff;
+    text-decoration: none;
+    background-color: #222f22;
+    padding:7px 12px;
+    font-size: 18px;;
+}
+/* .logo h1{
+    position:;
+} */
+
+
+.footer-full-width{
+    width:100%;
+    height:120px;
+    background-color: #519194;
+    /* margin-top:20px; */
+    clear:both;
+}
+
+.footer{
+    width:960px;
+    height:120px;
+    margin:0 auto;
+    margin-top:50px;
+}
+
+.footer p{
+    float:left;
+    font-size: 20px;
+    margin-top:50px;
+    margin-left:85px;
+    color:#fff;
+
+}
+
+.footer .social{
+    width:200px;
+    height:50px;
+    background-color: #387a82;
+    float:right;
+    margin-top:30px;
+    padding-top:15px;
+}
+
+.social span{
+    padding-left:20px;
+    font-size:25px;
+}
+

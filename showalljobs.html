@@ -28,59 +28,32 @@
     }
 
     .card {
-        background-color: var(--bg-color);
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px var(--shadow-color);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        z-index: 0;
-    }
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            border: none;
+            overflow: hidden;
+        }
 
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
 
-    .card-header {
-        background-color: var(--primary-color);
-        color: #fff;
-        font-weight: bold;
-        font-size: 1.25rem;
-        padding: 10px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
+        .card-header {
+            background-color: white;
+            font-weight: bold;
+            font-size: 25px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 1.25rem 1.5rem;
+        }
 
-    .card-body {
-        padding: 20px;
-    }
+        .card-body {
+            padding: 1.5rem;
+        }
 
-    .card-body p {
-        font-size: 1rem;
-        margin: 5px 0;
-        line-height: 1.5;
-    }
 
-    .card-footer {
-        background-color: var(--highlight-color);
-        border-top: 1px solid #eee;
-        padding: 15px;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .btn-outline-success {
-        color: var(--primary-color);
-        border-color: var(--primary-color);
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .btn-outline-success:hover {
-        background-color: var(--button-hover-color);
-        color: #fff;
-    }
 
     @keyframes fadeIn {
         from {
@@ -94,9 +67,6 @@
         }
     }
 
-    .card {
-        animation: fadeIn 0.5s ease-in-out;
-    }
 
     .popup {
         width: 400px;
@@ -312,30 +282,44 @@
 
 <main>
   <div class="container my-5">
-    <div class="row">
-      <div th:each="job : ${jobsList}" class="col-lg-4 col-md-6 col mb-3">
+    <div class="row" th:each="job : ${jobsList}">
+      <div class="col-lg-4"></div>
+      <div  class="col-lg-8 col-md-8 col mb-3">
         <div class="card">
           <div class="card-header">
             <span th:text="${job.jobtitle}">Job Title</span>
           </div>
           <div class="card-body">
-            <p><strong>Description:</strong> <span th:text="${job.description}">Description</span></p>
-            <p><strong>Location:</strong> <span th:text="${job.location}">Location</span></p>
-            <p><strong>Experience:</strong> <span th:text="${job.experience}">Experience</span></p>
-            <p><strong>Skills:</strong> <span th:text="${job.skills}">Skills</span></p>
-            <p><strong>Salary:</strong> ₹<span th:text="${job.min_salary}">Min</span> - ₹<span
-                    th:text="${job.max_salary}">Max</span></p>
+            <p></i><strong class="text-muted">Description:</strong> <span
+                    th:text="${job.description}" class="text-muted">Description</span></p>
+            <div class="d-flex justify-content-between">
+              <p><i class="fas fa-location-dot text-primary me-2"></i><strong
+                      class="text-muted">Location:</strong> <span
+                      th:text="${job.location}">Location</span></p>
+              <p><i class="fas fa-briefcase  me-2" style="color:brown;"></i><strong
+                      class="text-muted">Experience:</strong> <span
+                      th:text="${job.experience}">Experience</span></p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p><i class="fas fa-code text-success  me-2 "></i><strong
+                      class="text-muted">Skills:</strong> <span
+                      th:text="${job.skills}">Skills</span></p>
+              <p><i class="fas fa-dollar-sign text-success me-2"></i><strong
+                      class="text-muted">Salary:</strong> ₹<span
+                      th:text="${job.min_salary}">Min</span> - ₹<span
+                      th:text="${job.max_salary}">Max</span></p>
+            </div>
           </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-outline-success">More</a>
+          <div class="card-footer d-flex justify-content-end">
+            <a href="#" class="btn btn-outline-dark me-3">More</a>
             <form th:action="@{/company/updatejob}" method="GET" style="display:inline;">
               <input type="hidden" th:value="${job.jobid}" name="jobid">
-              <button type="submit" class="btn btn-outline-success">Update</button>
+              <button type="submit" class="btn btn-outline-dark me-3">Update</button>
             </form>
             <form th:action="@{/company/jobdelete}" method="GET" style="display:inline;"
                   onsubmit="return checkConfirmation(event)">
               <input type="hidden" th:value="${job.jobid}" name="jobid">
-              <button type="submit" class="btn btn-outline-success">Delete</button>
+              <button type="submit" class="btn btn-outline-dark me-3">Delete</button>
             </form>
           </div>
         </div>
